@@ -3,7 +3,7 @@ import userModle from "../Models/userModle.js";
 import jsonwebtoken from "jsonwebtoken";
 export const registerController = async (req, res) => {
   try {
-    const { name, email, password, phone, address } = req.body;
+    const { name, email, password, phone, address, question } = req.body;
     // velidation
     if (!name) {
       return res.send({ error: "Name is required" });
@@ -20,6 +20,7 @@ export const registerController = async (req, res) => {
     if (!address) {
       return res.send({ message: "Address is required" });
     }
+
     // check user
     const existingUser = await userModle.findOne({ email });
     // existing User
@@ -95,6 +96,7 @@ export const loginController = async (req, res) => {
         email: user.email,
         phone: user.phone,
         address: user.address,
+        role: user.role,
       },
       token,
     });
@@ -107,7 +109,7 @@ export const loginController = async (req, res) => {
     });
   }
 };
-
+//
 // for test route
 
 export const testController = (req, res) => {

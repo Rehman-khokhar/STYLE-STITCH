@@ -13,7 +13,20 @@ router.post("/register", registerController);
 // Login Method || post method
 router.post("/login", loginController);
 
-// for text ||
+// protected route user || get method
+router.get("/user-auth", requireSignIn, (req, res) => {
+  res.status(200).send({
+    ok: true,
+  });
+});
+// protected route for admin|| get method
+router.get("/admin-auth", requireSignIn, isAdmin, (req, res) => {
+  res.status(200).send({
+    ok: true,
+  });
+});
+
+// for test ||
 router.get("/test", requireSignIn, isAdmin, testController);
 
 export default router;

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import React from "react";
 import { Navigate, useNavigate } from "react-router-dom";
-
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import axios from "axios";
 import Layout from "../../Components/layout/Layout";
+import "../../Style/Authstyle.css";
 
 function Register() {
   const [name, setName] = useState("");
@@ -12,6 +12,7 @@ function Register() {
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
+  // const [question, setQuestion] = useState("");
   const Navigate = useNavigate();
 
   //   form function
@@ -24,14 +25,18 @@ function Register() {
   //  handle submit event
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      const res = await axios.post("/api/v1/auth/register", {
-        name,
-        email,
-        password,
-        phone,
-        address,
-      });
+      const res = await axios.post(
+        `http://localhost:1012/api/v1/auth/register`,
+        {
+          name,
+          email,
+          password,
+          phone,
+          address,
+        }
+      );
       if (res.data.success) {
         toast.success(res.data.message);
         Navigate("/login");
@@ -46,10 +51,10 @@ function Register() {
 
   return (
     <Layout title={"RegisterNow -ShopNow"}>
-      <div className="register">
-        <h1>Register Now</h1>
+      <div className="form-container">
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
+            <h4 className="title"> Register Now</h4>
             <input
               type="text"
               value={name}
@@ -105,7 +110,7 @@ function Register() {
           </div>
 
           <button type="submit" className="btn btn-primary">
-            Submit
+            REGISTER
           </button>
         </form>
       </div>

@@ -5,7 +5,7 @@ import Layout from "../Components/layout/Layout";
 
 const Order = () => {
   return (
-    <Layout title={"How to Order- shopNow"}>
+    <Layout title={"S&S-HOW TO ORDER"}>
       <div className="container">
         <div className="heading mt-5">
           {" "}
@@ -122,9 +122,9 @@ const Order = () => {
           <Link
             className="col-lg-3 ms-auto pnf-btn text-white"
             style={{ border: "1px solid white" }}
-            to="/register"
+            to="/"
           >
-            Sign up
+            HOME PAGE
           </Link>
         </div>
       </div>

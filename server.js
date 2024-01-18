@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import connDb from "./Config/connectDb.js";
 import authRoute from "./Routes/authRoutes.js";
+import categoryRoutes from "./Routes/CategoryRoute.js";
+import productRoutes from "./Routes/ProductsRoutes.js";
 import cors from "cors";
 // dit env call
 dotenv.config();
@@ -18,6 +20,8 @@ app.use(express.json());
 app.use(morgan("dev"));
 // All routes
 app.use("/api/v1/auth", authRoute);
+app.use("/api/v1/category", categoryRoutes);
+app.use("/api/v1/product", productRoutes);
 // app get
 app.get("/", (req, res) => {
   res.send("<h1>This is Ecommerece app</h1>");

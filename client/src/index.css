@@ -91,11 +91,11 @@ font-family: 'Roboto Slab', serif; */
   background: gray;
   color: white;
 }
-/* /////////////////////////// Register now */
-.register {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 70vh;
-  flex-direction: column;
+/* register */
+..form-container form .title {
+  font-family: "Playfair Display", serif;
+}
+/* upload image */
+.picture {
+  margin-bottom: 3px;
 }

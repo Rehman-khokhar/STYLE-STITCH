@@ -2,15 +2,21 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 import Layout from "../Components/layout/Layout";
+import { TbFaceIdError } from "react-icons/tb";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 const PageNotFound = () => {
   return (
-    <Layout title={"Page not found - shopNow"}>
+    <Layout title={"Page not found - S&S"}>
       <div className="pnf">
-        <h1 className="pnf-title">404</h1>
+        <h1 className="pnf-title">
+          {" "}
+          <TbFaceIdError />
+          404
+        </h1>
         <h2 className="pnf-heading">Oops! Page Not Found</h2>
         <Link to="/" className="pnf-btn">
-          Go Back
+          <IoMdArrowRoundBack /> Go Back
         </Link>
       </div>
     </Layout>
