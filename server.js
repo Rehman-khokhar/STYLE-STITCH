@@ -6,11 +6,18 @@ import connDb from "./Config/connectDb.js";
 import authRoute from "./Routes/authRoutes.js";
 import categoryRoutes from "./Routes/CategoryRoute.js";
 import productRoutes from "./Routes/ProductsRoutes.js";
+import multer from "multer";
 import cors from "cors";
 // dit env call
 dotenv.config();
 // database config
 connDb();
+// // for image
+// const upload = multer({ dest: "products/" });
+// app.post("upload-image", upload.single(photo), async (req, res) => {
+//   console.log(req.body);
+//   res.send("uploaded!!");
+// });
 
 // Express call
 const app = express();
