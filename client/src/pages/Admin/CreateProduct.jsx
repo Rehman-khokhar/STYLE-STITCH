@@ -45,10 +45,13 @@ const CreateProduct = () => {
       productData.append("quantity", quantity);
       productData.append("photo", photo);
       productData.append("category", category);
+      productData.append("price", price);
+      console.log("photo", photo);
       const { data } = axios.post(
         "http://localhost:1012/api/v1/product/create-product",
         productData
       );
+      console.log("data", data);
       if (data?.success) {
         toast.success("Product created successfully");
         nevigate("/dashboard/admin/products");
@@ -88,7 +91,6 @@ const CreateProduct = () => {
                   {photo ? photo.name : "Upload Photo"}
                   <input
                     type="file"
-                    name="photo"
                     accept="image/*"
                     onChange={(e) => setPhoto(e.target.files[0])}
                     hidden

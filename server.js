@@ -22,9 +22,21 @@ connDb();
 // Express call
 const app = express();
 // middleWere Morgan
+
 app.use(cors());
+
+// const upload = multer({ dest: "uploads/" });
+// app.post("/create-product", upload.single("photo"), (req, res) => {
+//   const uploadedFile = req.file;
+//   console.log("uploadedFile", uploadedFile);
+//   // Process the file as needed
+//   // ...
+//   res.send("File uploaded successfully");
+// });
+
 app.use(express.json());
 app.use(morgan("dev"));
+
 // All routes
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/category", categoryRoutes);
