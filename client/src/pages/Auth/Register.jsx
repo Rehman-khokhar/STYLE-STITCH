@@ -28,7 +28,7 @@ function Register() {
 
     try {
       const res = await axios.post(
-        `http://localhost:1012/api/v1/auth/register`,
+        `http://localhost:8080/api/v1/auth/register`,
         {
           name,
           email,

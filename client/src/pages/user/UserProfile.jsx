@@ -25,7 +25,7 @@ const UserProfile = () => {
 
     try {
       const { data } = await axios.put(
-        `http://localhost:1012/api/v1/auth/profile`,
+        `http://localhost:8080/api/v1/auth/profile`,
         {
           name,
           email,
