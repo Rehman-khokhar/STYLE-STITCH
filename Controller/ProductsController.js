@@ -6,7 +6,6 @@ import braintree from "braintree";
 import OrderModle from "../Models/OrderModle.js";
 import dotenv from "dotenv";
 
-<<<<<<< HEAD
 dotenv.config();
 
 //  pament getway
@@ -16,18 +15,6 @@ var gateway = new braintree.BraintreeGateway({
   publicKey: process.env.BRAINTREE_PUBLIC_KEY,
   privateKey: process.env.BRAINTREE_PRIVATE_KEY,
 });
-=======
-// const storage = multer.diskStorage({
-//   destination: function (req, file, cb) {
-//     return cb(null, "./public/Images");
-//   },
-//   filename: function (req, file, cb) {
-//     return cb(null, `${Date.now()}_${file.originalname}`);
-//   },
-// });
-// const upload = multer({ storage });
-
->>>>>>> 471dc036d29442146dd62094b6ef62adb371fa77
 // create product
 export const createProductController = async (req, res) => {
   try {
