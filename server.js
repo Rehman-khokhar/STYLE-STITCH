@@ -16,12 +16,6 @@ import { fileURLToPath } from "url";
 dotenv.config();
 // database config
 connDb();
-// // for image
-// const upload = multer({ dest: "products/" });
-// app.post("upload-image", upload.single(photo), async (req, res) => {
-//   console.log(req.body);
-//   res.send("uploaded!!");
-// });
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
