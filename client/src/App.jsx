@@ -43,14 +43,14 @@ function App() {
           <Route path="user/orders" element={<UserOrders />} />
           <Route path="user/profile" element={<UserProfile />} />
         </Route>
-        {/* <Route path="/dashboard" element={<AdminRoute />}>
+        <Route path="/dashboard" element={<AdminRoute />}>
           <Route path="admin" element={<AdminDashboard />} />
           <Route path="admin/create-category" element={<CreateCategory />} />
           <Route path="admin/create-product" element={<CreateProduct />} />
           <Route path="admin/Product/:slug" element={<UpdateProduct />} />
           <Route path="admin/products" element={<Products />} />
           <Route path="admin/create-users" element={<Users />} />
-        </Route> */}
+        </Route>
 
         <Route path="admin" element={<AdminDashboard />} />
         <Route path="admin/create-category" element={<CreateCategory />} />

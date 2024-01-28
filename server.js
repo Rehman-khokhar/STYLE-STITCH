@@ -29,8 +29,7 @@ app.use(morgan("dev"));
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = dirname(__filename);
+
 const __dir = path.resolve();
 // Express call
 if (process.env.ENV_MODE !== "development") {
