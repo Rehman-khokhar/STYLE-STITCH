@@ -1,10 +1,11 @@
-import JWT from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import userModle from "../Models/user.js";
 
 // protected router base
 export const requireSignIn = async (req, res, next) => {
   try {
-    const dCode = JWT.verify(req.headers.authorization, process.env.JWT_SECRET);
+    console.log("requireSignIn", req.headers);
+    const dCode = jwt.verify(req.headers.authorization, process.env.JWT_SECRET);
     console.log("dCode", dCode);
     req.user = dCode;
     next();

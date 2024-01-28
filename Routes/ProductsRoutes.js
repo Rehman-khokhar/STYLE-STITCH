@@ -17,15 +17,18 @@ import {
   braintreePaymentController,
 } from "../Controller/ProductsController.js";
 import ExpressFormidable from "express-formidable";
-
+import { imageUpload } from "../utils/upload.js";
 const router = express.Router();
 //  ROUTERS
 // Create products
+// router.route("/create").post(logoUpload, controller.create);
+
 router.post(
   "/create-product",
   requireSignIn,
   isAdmin,
-  ExpressFormidable(),
+  // ExpressFormidable(),
+  imageUpload, // Add the imageUpload middleware here
   createProductController
 );
 // update product

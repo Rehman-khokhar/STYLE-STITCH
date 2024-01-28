@@ -1,5 +1,5 @@
 import { comparePassword, hashPassword } from "../Helper/auth.helper.js";
-import userModle from "../Models/userModle.js";
+import userModle from "../Models/user.js";
 import jsonwebtoken from "jsonwebtoken";
 import OrderModle from "../Models/OrderModle.js";
 

@@ -1,11 +1,12 @@
 import slugify from "slugify";
-import ProductModle from "../Models/ProductModle.js";
+import Product from "../Models/Product.js";
 import fs from "fs";
 import categoryModel from "../Models/CategoryModel.js";
 import braintree from "braintree";
 import OrderModle from "../Models/OrderModle.js";
 import dotenv from "dotenv";
 
+<<<<<<< HEAD
 dotenv.config();
 
 //  pament getway
@@ -15,38 +16,47 @@ var gateway = new braintree.BraintreeGateway({
   publicKey: process.env.BRAINTREE_PUBLIC_KEY,
   privateKey: process.env.BRAINTREE_PRIVATE_KEY,
 });
+=======
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     return cb(null, "./public/Images");
+//   },
+//   filename: function (req, file, cb) {
+//     return cb(null, `${Date.now()}_${file.originalname}`);
+//   },
+// });
+// const upload = multer({ storage });
+
+>>>>>>> 471dc036d29442146dd62094b6ef62adb371fa77
 // create product
 export const createProductController = async (req, res) => {
   try {
-    const { name, slug, description, price, category, quantity, shiping } =
-      req.fields;
-    const { photo } = req.files;
+    // console.log(req.fields);
+    console.log(req.body);
+    const payload = req.body;
+    // const { name, slug, description, price, category, quantity, shiping } =
+    //   req.fields;
+    console.log("req.files", req.files);
+    console.log("payload", payload);
+    const { name, description, price, category, quantity, shiping } = payload;
+    console.log("name", name);
+    if (!name) return res.status(400).send({ error: "Name is required" });
+    if (!description)
+      return res.status(400).send({ error: "Description is required" });
+    if (!price) return res.status(400).send({ error: "Price is required" });
+    if (!quantity)
+      return res.status(400).send({ error: "quantity is required" });
 
-    // velidation
-    switch (true) {
-      case !name:
-        return res.status(505).send({ error: "Name is required" });
+    for (const key in req.files) {
+      const image = req.files[key];
+      console.log("image", image);
+      payload[`${key}`] = image[0]?.filename;
+    }
+    console.log("payload", payload);
+    // const products = new Product({ payload, slug: slugify(name) })
+    const products = new Product(payload);
+    console.log("products", products);
 
-      case !description:
-        return res.status(505).send({ error: "Description is required" });
-      case !price:
-        return res.status(505).send({ error: "Price is required" });
-      case !category:
-        return res.status(505).send({ error: "Category is required" });
-      case !quantity:
-        return res
-          .status(505)
-          .send({ error: "Number of products is required" });
-      case !photo && photo.size > 100000:
-        return res
-          .status(505)
-          .send({ error: "Photo is required and Should be less then 1mb" });
-    }
-    const products = new ProductModle({ ...req.fields, slug: slugify(name) });
-    if (photo) {
-      products.photo.data = fs.readFileSync(photo.path);
-      products.photo.contentType = photo.type;
-    }
     await products.save();
     res.status(201).send({
       success: true,

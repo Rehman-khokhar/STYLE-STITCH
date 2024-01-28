@@ -30,7 +30,18 @@ console.log("__dirname", __dirname);
 // Express call
 const app = express();
 // middleWere Morgan
+
 app.use(cors());
+
+// const upload = multer({ dest: "uploads/" });
+// app.post("/create-product", upload.single("photo"), (req, res) => {
+//   const uploadedFile = req.file;
+//   console.log("uploadedFile", uploadedFile);
+//   // Process the file as needed
+//   // ...
+//   res.send("File uploaded successfully");
+// });
+
 app.use(express.json());
 app.use(morgan("dev"));
 // console.log(__dirname);
