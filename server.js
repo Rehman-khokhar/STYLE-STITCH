@@ -23,9 +23,7 @@ connDb();
 //   res.send("uploaded!!");
 // });
 const __filename = fileURLToPath(import.meta.url);
-console.log("__filename", __filename);
 const __dirname = dirname(__filename);
-console.log("__dirname", __dirname);
 
 // Express call
 const app = express();
