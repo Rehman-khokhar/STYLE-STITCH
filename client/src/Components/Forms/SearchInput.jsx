@@ -14,9 +14,7 @@ const SearchInput = () => {
       );
       setValues({ ...values, result: data });
       navigate("/search");
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
   return (
     <form className="d-flex" role="search" onSubmit={handleSubmit}>
