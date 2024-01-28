@@ -37,6 +37,7 @@ function Register() {
           address,
         }
       );
+      console.log("res", res);
       if (res.data.success) {
         toast.success(res.data.message);
         Navigate("/login");

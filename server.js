@@ -16,11 +16,7 @@ import { fileURLToPath } from "url";
 dotenv.config();
 // database config
 connDb();
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = dirname(__filename);
-const __dir = path.resolve();
-console.log("__dir", __dir);
-// Express call
+
 const app = express();
 // middleWere Morgan
 
@@ -28,19 +24,22 @@ app.use(cors());
 
 app.use(express.json());
 app.use(morgan("dev"));
-console.log("enter", process.env.ENV_MODE);
-if (process.env.ENV_MODE !== "development") {
-  app.use("/", express.static(path.join(__dir, "client", "dist")));
-  console.log("enter1", path.join(__dir, "client", "dist"));
-  app.use("*", (req, res) => {
-    res.sendFile(path.join(__dir, "client", "dist", "index.html"));
-  });
-}
 
 // All routes
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
+const __dir = path.resolve();
+// Express call
+if (process.env.ENV_MODE !== "development") {
+  app.use("/", express.static(path.join(__dir, "client", "dist")));
+  console.log("enter1", path.join(__dir, "client", "dist"));
+  app.use("/", (req, res) => {
+    res.sendFile(path.join(__dir, "client", "dist", "index.html"));
+  });
+}
 
 // rest api
 

@@ -1,11 +1,10 @@
 import slugify from "slugify";
-import Product from "../Models/Product.js";
 import fs from "fs";
 import categoryModel from "../Models/CategoryModel.js";
 import braintree from "braintree";
 import OrderModle from "../Models/OrderModle.js";
 import dotenv from "dotenv";
-
+import ProductModle from "../Models/ProductModle.js";
 dotenv.config();
 
 //  pament getway
@@ -67,6 +66,7 @@ export const ProductController = async (req, res) => {
       .select("-photo")
       .limit(12)
       .sort({ createdAt: -1 });
+    console.log("products", products);
     res.status(200).send({
       success: true,
       counTotal: products.length,

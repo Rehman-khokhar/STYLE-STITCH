@@ -14,6 +14,7 @@ const Products = () => {
       const { data } = await axios.get(
         `http://localhost:8080/api/v1/product/get-product`
       );
+      console.log("data", data);
       setProducts(data.products);
     } catch (error) {
       console.log(error);
