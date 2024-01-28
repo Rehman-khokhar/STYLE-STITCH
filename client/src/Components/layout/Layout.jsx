@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 
 const Layout = ({ children, title, keywords, author, description }) => {
   return (
-    <div>
+    <div className="colors">
       <div>
         <meta charSet="utf-8" />
         <meta name="description" content={description} />
@@ -16,13 +16,14 @@ const Layout = ({ children, title, keywords, author, description }) => {
 
         <title>{title}</title>
       </div>
+      <div className="style">
+        <Header />
+        <Toaster />
 
-      <Header />
-      <Toaster />
+        <main style={{ minHeight: "75vh" }}>{children}</main>
 
-      <main style={{ minHeight: "70vh" }}>{children}</main>
-
-      <Footer />
+        <Footer />
+      </div>
     </div>
   );
 };

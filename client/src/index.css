@@ -17,6 +17,14 @@ font-family: 'Poppins', sans-serif;
 font-family: 'Roboto', sans-serif;
 font-family: 'Roboto Slab', serif; */
 /* navbar css */
+
+.navbar-C {
+  color: black;
+
+  background: black;
+  background-color: #edf2ef;
+  background-image: linear-gradient(0deg, #edf2ef 0%);
+}
 .navbar {
   font-family: "Poppins", sans-serif;
   font-size: 17px;
@@ -40,21 +48,21 @@ font-family: 'Roboto Slab', serif; */
 }
 /* footer */
 .footer {
-  color: white;
+  color: black;
   padding: 25px;
-  background: #000000;
-  background: -webkit-linear-gradient(to right, #434343, #000000);
-  background: linear-gradient(to right, #13274f, #000000);
+  background: black;
+  background-color: #edf2ef;
+  background-image: linear-gradient(#edf2ef 100%);
 }
 .footer a {
   text-decoration: none;
-  color: white;
+  color: black;
   padding: 10px;
 }
 
 .footer a:hover {
-  color: #ffefba;
-  border-bottom: 1px solid #ffefba;
+  color: black;
+  border-bottom: 1px solid black;
 }
 /* Page not found css */
 .pnf {
@@ -92,10 +100,15 @@ font-family: 'Roboto Slab', serif; */
   color: white;
 }
 /* register */
-..form-container form .title {
+.form-container form .title {
   font-family: "Playfair Display", serif;
 }
 /* upload image */
 .picture {
   margin-bottom: 3px;
+}
+/* product page */
+.product-link {
+  text-decoration: none !important;
+  color: black !important;
 }

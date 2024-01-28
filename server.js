@@ -7,7 +7,11 @@ import authRoute from "./Routes/authRoutes.js";
 import categoryRoutes from "./Routes/CategoryRoute.js";
 import productRoutes from "./Routes/ProductsRoutes.js";
 import multer from "multer";
+import path, { dirname } from "path";
+
 import cors from "cors";
+import { fileURLToPath } from "url";
+
 // dit env call
 dotenv.config();
 // database config
@@ -18,6 +22,10 @@ connDb();
 //   console.log(req.body);
 //   res.send("uploaded!!");
 // });
+const __filename = fileURLToPath(import.meta.url);
+console.log("__filename", __filename);
+const __dirname = dirname(__filename);
+console.log("__dirname", __dirname);
 
 // Express call
 const app = express();
@@ -25,10 +33,21 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
+// console.log(__dirname);
+// app.use(express.static(path.join(__dirname, "./client/dist")));
+app.use(express.static(path.join(__dirname, "./client/dist")));
+
 // All routes
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
+
+// rest api
+
+app.use("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./client/dist/index.html"));
+});
+
 // app get
 app.get("/", (req, res) => {
   res.send("<h1>This is Ecommerece app</h1>");

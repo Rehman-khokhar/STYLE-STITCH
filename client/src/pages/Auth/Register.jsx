@@ -97,7 +97,10 @@ function Register() {
               required
             />
           </div>
-          <div className="mb-3">
+          <div
+            className="mb
+          -3"
+          >
             <input
               type="text"
               value={address}

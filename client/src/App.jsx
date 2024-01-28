@@ -17,12 +17,26 @@ import CreateProduct from "./pages/Admin/CreateProduct.jsx";
 import Users from "./pages/Admin/Users.jsx";
 import UserOrders from "./pages/user/UserOrders.jsx";
 import UserProfile from "./pages/user/UserProfile.jsx";
+import Products from "./pages/Admin/Products.jsx";
+import UpdateProduct from "./pages/Admin/UpdateProduct.jsx";
+import SearchPage from "./pages/SearchPage.jsx";
+import DetailPage from "./pages/DetailPage.jsx";
+import Categaries from "./pages/Categaries.jsx";
+import CategoryList from "./pages/CategoryList.jsx";
+import CartPage from "./pages/CartPage.jsx";
+import AdminOrder from "./pages/Admin/AdminOrder.jsx";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/product/:slug" element={<DetailPage />} />
+        <Route path="/categories" element={<Categaries />} />
+        <Route path="/category/:slug" element={<CategoryList />} />
+        <Route path="/cart" element={<CartPage />} />
+
+        <Route path="/Search" element={<SearchPage />} />
         {/* for dash board */}
         <Route path="/dashboard" element={<PrivateRoute />}>
           <Route path="user" element={<Dashboard />} />
@@ -33,7 +47,10 @@ function App() {
           <Route path="admin" element={<AdminDashboard />} />
           <Route path="admin/create-category" element={<CreateCategory />} />
           <Route path="admin/create-product" element={<CreateProduct />} />
+          <Route path="admin/Product/:slug" element={<UpdateProduct />} />
+          <Route path="admin/products" element={<Products />} />
           <Route path="admin/create-users" element={<Users />} />
+          <Route path="admin/orders" element={<AdminOrder />} />
         </Route>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />

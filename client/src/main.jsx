@@ -5,11 +5,17 @@ import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "../src/context/Auth.jsx";
 import "antd/dist/reset.css";
+import { SearchProvider } from "./context/Search.jsx";
+import { CartProvider } from "./context/Cart.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <AuthProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <SearchProvider>
+      <CartProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </CartProvider>
+    </SearchProvider>
   </AuthProvider>
 );

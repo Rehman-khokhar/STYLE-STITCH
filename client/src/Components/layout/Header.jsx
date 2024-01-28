@@ -4,9 +4,14 @@ import { FaOpencart } from "react-icons/fa6";
 import { useAuth } from "../../context/Auth";
 import toast from "react-hot-toast";
 import { MdShoppingCart } from "react-icons/md";
-
+import SearchInput from "../Forms/SearchInput";
+import useCategory from "../../hooks/useCategory";
+import { useCart } from "../../context/Cart";
+import { Badge } from "antd";
 function Header() {
+  const [cart] = useCart();
   const [auth, setAuth] = useAuth();
+  const categories = useCategory();
   const handleLougout = () => {
     setAuth({
       ...auth,
@@ -18,7 +23,7 @@ function Header() {
   };
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-C">
         <div className="container-fluid">
           <button
             className="navbar-toggler"
@@ -44,24 +49,46 @@ function Header() {
                   aria-current="page"
                   href="#"
                 >
-                  HOME
+                  <b>HOME</b>
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink to="/catagory" className="nav-link">
-                  CATAGORY
-                </NavLink>
+              <li className="nav-item dropdown">
+                <Link
+                  className="nav-link dropdown-toggle"
+                  to={"/categories"}
+                  data-bs-toggle="dropdown"
+                >
+                  <b>CATEGORIES</b>
+                </Link>
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link className="dropdown-item" to={"/categories"}>
+                      All Categories
+                    </Link>
+                  </li>
+                  {categories?.map((c) => (
+                    <li>
+                      <Link
+                        className="dropdown-item"
+                        to={`/category/${c.slug}`}
+                      >
+                        {c.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </li>
+
               {!auth.user ? (
                 <>
                   <li className="nav-item">
                     <NavLink to="/register" className="nav-link">
-                      REGISTER
+                      <b>REGISTER</b>
                     </NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink to="/login" className="nav-link">
-                      LOGIN
+                      <b>LOGIN</b>
                     </NavLink>
                   </li>
                 </>
@@ -102,7 +129,10 @@ function Header() {
               )}
               <li className="nav-item">
                 <NavLink to="/cart" className="nav-link">
-                  Cart (<MdShoppingCart />)
+                  <b>
+                    <MdShoppingCart />
+                  </b>
+                  ( {cart?.length})
                 </NavLink>
               </li>
             </ul>

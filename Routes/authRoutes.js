@@ -3,6 +3,10 @@ import {
   registerController,
   loginController,
   testController,
+  updateProfileController,
+  getOrdersController,
+  getAllOrdersController,
+  orderStatusController,
 } from "../Controller/authController.js";
 import { isAdmin, requireSignIn } from "../Middlewares/authToken.js";
 // Router obj
@@ -26,7 +30,22 @@ router.get("/admin-auth", requireSignIn, isAdmin, (req, res) => {
   });
 });
 
+// update profile
+router.put("/profile", requireSignIn, updateProfileController);
+
 // for test ||
 router.get("/test", requireSignIn, isAdmin, testController);
+
+//orders
+router.get("/orders-get", requireSignIn, getOrdersController);
+// all orders
+router.get("/all-orders", requireSignIn, isAdmin, getAllOrdersController);
+// order status
+router.put(
+  "/order-status/:orderId",
+  requireSignIn,
+  isAdmin,
+  orderStatusController
+);
 
 export default router;

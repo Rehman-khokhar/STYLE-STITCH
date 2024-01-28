@@ -8,12 +8,7 @@ const About = () => {
   return (
     <Layout title={"S&S-ABOUT"}>
       <div className=" row aboutus">
-        <div className="col-md-6">
-          <img
-            src="/client/public/images/About-Us-PNG-Free-Download.png"
-            alt="about us"
-          />
-        </div>
+        <div className="col-md-4"></div>
         <div className="col-md-4">
           <h1 className="bg-dark p-4 mt-5 text-white text-center">About us</h1>
           <p className="mt-3 text-center">
@@ -42,6 +37,7 @@ const About = () => {
             </Link>
           </p>
         </div>
+        <div className="col-md-4"></div>
       </div>
     </Layout>
   );
