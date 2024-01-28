@@ -18,27 +18,24 @@ dotenv.config();
 connDb();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
+const __dir = path.resolve();
+console.log("__dir", __dir);
 // Express call
 const app = express();
 // middleWere Morgan
 
 app.use(cors());
 
-// const upload = multer({ dest: "uploads/" });
-// app.post("/create-product", upload.single("photo"), (req, res) => {
-//   const uploadedFile = req.file;
-//   console.log("uploadedFile", uploadedFile);
-//   // Process the file as needed
-//   // ...
-//   res.send("File uploaded successfully");
-// });
-
 app.use(express.json());
 app.use(morgan("dev"));
-// console.log(__dirname);
-// app.use(express.static(path.join(__dirname, "./client/dist")));
-app.use(express.static(path.join(__dirname, "./client/dist")));
+
+if (process.env.ENV_MODE !== "development") {
+  app.use("/", express.static(path.join(__dir, "client", "dist")));
+
+  app.use("*", (req, res) => {
+    res.sendFile(path.join(__dir, "client", "dist", "index.html"));
+  });
+}
 
 // All routes
 app.use("/api/v1/auth", authRoute);
@@ -47,9 +44,9 @@ app.use("/api/v1/product", productRoutes);
 
 // rest api
 
-app.use("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/dist/index.html"));
-});
+// app.use("*", function (req, res) {
+//   res.sendFile(path.join(__dirname, "./client/dist/index.html"));
+// });
 
 // app get
 app.get("/", (req, res) => {
