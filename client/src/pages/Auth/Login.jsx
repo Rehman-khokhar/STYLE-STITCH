@@ -18,10 +18,13 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post(`http://localhost:8080/api/v1/auth/login`, {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        `https://angry-lime-dolphin.cyclic.app/api/v1/auth/login`,
+        {
+          email,
+          password,
+        }
+      );
       if (res.data.success) {
         toast.success(res.data.message);
         setAuth({ ...auth, user: res.data.user, token: res.data.token });

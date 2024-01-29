@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../../Components/layout/Layout";
-import AdminMenu from "../../Components/layout/AdminMenu";
-import axios from "axios";
+import AdminMenu from "./../../Components/layout/AdminMenu";
 import toast from "react-hot-toast";
+import axios from "axios";
 import { Select } from "antd";
-const { Option } = Select;
 import { useNavigate } from "react-router-dom";
+const { Option } = Select;
 
 const CreateProduct = () => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const CreateProduct = () => {
   const getAllCategory = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8080/api/v1/category/get-category`
+        "https://angry-lime-dolphin.cyclic.app/api/v1/category/get-category"
       );
       if (data?.success) {
         setCategories(data?.category);
@@ -48,13 +48,10 @@ const CreateProduct = () => {
       productData.append("quantity", quantity);
       productData.append("photo", photo);
       productData.append("category", category);
-      productData.append("price", price);
-      console.log("photo", photo);
       const { data } = axios.post(
-        "http://localhost:8080/api/v1/product/create-product",
+        `https://angry-lime-dolphin.cyclic.app/api/v1/product/create-product`,
         productData
       );
-      console.log("data", data);
       if (data?.success) {
         toast.error(data?.message);
       } else {
@@ -98,6 +95,7 @@ const CreateProduct = () => {
                   {photo ? photo.name : "Upload Photo"}
                   <input
                     type="file"
+                    name="photo"
                     accept="image/*"
                     onChange={(e) => setPhoto(e.target.files[0])}
                     hidden

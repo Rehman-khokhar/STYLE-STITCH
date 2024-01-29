@@ -28,7 +28,7 @@ function Register() {
 
     try {
       const res = await axios.post(
-        `http://localhost:8080/api/v1/auth/register`,
+        `https://angry-lime-dolphin.cyclic.app/api/v1/auth/register`,
         {
           name,
           email,
