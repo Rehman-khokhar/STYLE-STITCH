@@ -13258,7 +13258,7 @@ to {
           i.preventDefault();
           try {
             const { data: a } = await De.get(
-              `https://average-glasses-foal.cyclic.app/api/v1/product/search/${e.keyword}`
+              `https://average-glasses-foal.cyclic.app//api/v1/product/search/${e.keyword}`
             );
             t({ ...e, result: a }), r("/search");
           } catch (a) {
@@ -13291,7 +13291,7 @@ to {
       r = async () => {
         try {
           const { data: n } = await De.get(
-            "https://average-glasses-foal.cyclic.app/api/v1/category/get-category"
+            "https://average-glasses-foal.cyclic.app//api/v1/category/get-category"
           );
           t(n == null ? void 0 : n.category);
         } catch (n) {
@@ -23549,7 +23549,7 @@ html body {
       }
       n(o);
     },
-    e8 = function (t, r, n, i, a) {
+    eF = function (t, r, n, i, a) {
       var o = [],
         s = t.required || (!t.required && i.hasOwnProperty(t.field));
       if (s) {
@@ -23559,7 +23559,7 @@ html body {
       }
       n(o);
     },
-    t8 = function (t, r, n, i, a) {
+    tF = function (t, r, n, i, a) {
       var o = [],
         s = t.required || (!t.required && i.hasOwnProperty(t.field));
       if (s) {
@@ -23569,7 +23569,7 @@ html body {
       }
       n(o);
     },
-    r8 = function (t, r, n, i, a) {
+    rF = function (t, r, n, i, a) {
       var o = [],
         s = t.required || (!t.required && i.hasOwnProperty(t.field));
       if (s) {
@@ -23579,7 +23579,7 @@ html body {
       }
       n(o);
     },
-    n8 = function (t, r, n, i, a) {
+    nF = function (t, r, n, i, a) {
       var o = [],
         s = t.required || (!t.required && i.hasOwnProperty(t.field));
       if (s) {
@@ -23588,17 +23588,17 @@ html body {
       }
       n(o);
     },
-    i8 = "enum",
-    a8 = function (t, r, n, i, a) {
+    iF = "enum",
+    aF = function (t, r, n, i, a) {
       var o = [],
         s = t.required || (!t.required && i.hasOwnProperty(t.field));
       if (s) {
         if (pr(r) && !t.required) return n();
-        Qe.required(t, r, i, o, a), r !== void 0 && Qe[i8](t, r, i, o, a);
+        Qe.required(t, r, i, o, a), r !== void 0 && Qe[iF](t, r, i, o, a);
       }
       n(o);
     },
-    o8 = function (t, r, n, i, a) {
+    oF = function (t, r, n, i, a) {
       var o = [],
         s = t.required || (!t.required && i.hasOwnProperty(t.field));
       if (s) {
@@ -23608,7 +23608,7 @@ html body {
       }
       n(o);
     },
-    s8 = function (t, r, n, i, a) {
+    sF = function (t, r, n, i, a) {
       var o = [],
         s = t.required || (!t.required && i.hasOwnProperty(t.field));
       if (s) {
@@ -23622,7 +23622,7 @@ html body {
       }
       n(o);
     },
-    l8 = function (t, r, n, i, a) {
+    lF = function (t, r, n, i, a) {
       var o = [],
         s = Array.isArray(r) ? "array" : typeof r;
       Qe.required(t, r, i, o, a, s), n(o);
@@ -23637,7 +23637,7 @@ html body {
       }
       n(s);
     },
-    c8 = function (t, r, n, i, a) {
+    cF = function (t, r, n, i, a) {
       var o = [],
         s = t.required || (!t.required && i.hasOwnProperty(t.field));
       if (s) {
@@ -23652,18 +23652,18 @@ html body {
       number: Z6,
       boolean: X6,
       regexp: J6,
-      integer: e8,
-      float: t8,
-      array: r8,
-      object: n8,
-      enum: a8,
-      pattern: o8,
-      date: s8,
+      integer: eF,
+      float: tF,
+      array: rF,
+      object: nF,
+      enum: aF,
+      pattern: oF,
+      date: sF,
       url: rh,
       hex: rh,
       email: rh,
-      required: l8,
-      any: c8,
+      required: lF,
+      any: cF,
     };
   function vv() {
     return {
@@ -23975,7 +23975,7 @@ html body {
       pattern: { mismatch: "'${name}' does not match pattern ${pattern}" },
     },
     TE = Tc;
-  function u8(e, t) {
+  function uF(e, t) {
     return e.replace(/\$\{\w+\}/g, function (r) {
       var n = r.slice(2, -1);
       return t[n];
@@ -24067,7 +24067,7 @@ html body {
                         a
                       )),
                       (h = d.map(function (g) {
-                        return typeof g == "string" ? u8(g, p) : g;
+                        return typeof g == "string" ? uF(g, p) : g;
                       })),
                       b.abrupt("return", h)
                     );
@@ -24085,7 +24085,7 @@ html body {
       Ev.apply(this, arguments)
     );
   }
-  function d8(e, t, r, n, i, a) {
+  function dF(e, t, r, n, i, a) {
     var o = e.join("."),
       s = r
         .map(function (u, d) {
@@ -24185,7 +24185,7 @@ html body {
           return { errors: d, rule: u };
         });
       });
-      l = (i ? p8(c) : f8(c)).then(function (u) {
+      l = (i ? pF(c) : fF(c)).then(function (u) {
         return Promise.reject(u);
       });
     }
@@ -24196,7 +24196,7 @@ html body {
       l
     );
   }
-  function f8(e) {
+  function fF(e) {
     return bv.apply(this, arguments);
   }
   function bv() {
@@ -24225,7 +24225,7 @@ html body {
       bv.apply(this, arguments)
     );
   }
-  function p8(e) {
+  function pF(e) {
     return Cv.apply(this, arguments);
   }
   function Cv() {
@@ -24292,7 +24292,7 @@ html body {
           return e[i] === n;
         });
   }
-  function h8(e, t) {
+  function hF(e, t) {
     if (e === t) return !0;
     if (
       (!e && t) ||
@@ -24312,7 +24312,7 @@ html body {
       return typeof o == "function" && typeof s == "function" ? !0 : o === s;
     });
   }
-  function m8(e) {
+  function mF(e) {
     var t = arguments.length <= 1 ? void 0 : arguments[1];
     return t && t.target && Xe(t.target) === "object" && e in t.target
       ? t.target[e]
@@ -24339,7 +24339,7 @@ html body {
         )
       : e;
   }
-  var v8 = ["name"],
+  var vF = ["name"],
     Cn = [];
   function AE(e, t, r, n, i, a) {
     return typeof e == "function"
@@ -24550,7 +24550,7 @@ html body {
                           return O.abrupt("return", []);
                         case 10:
                           return (
-                            (w = d8(c, u, x, l, v, _)),
+                            (w = dF(c, u, x, l, v, _)),
                             w
                               .catch(function (C) {
                                 return C;
@@ -24702,7 +24702,7 @@ html body {
               L[j] = arguments[j];
             f
               ? (D = f.apply(void 0, L))
-              : (D = m8.apply(void 0, [h].concat(L))),
+              : (D = mF.apply(void 0, [h].concat(L))),
               p && (D = p(D, w, _(!0))),
               x({ type: "updateValue", namePath: E, value: D }),
               O && O.apply(void 0, L);
@@ -24790,7 +24790,7 @@ html body {
   H(uy, "defaultProps", { trigger: "onChange", valuePropName: "value" });
   function Jw(e) {
     var t = e.name,
-      r = qt(e, v8),
+      r = qt(e, vF),
       n = y.useContext(Ss),
       i = y.useContext(Rd),
       a = t !== void 0 ? er(t) : void 0,
@@ -24803,7 +24803,7 @@ html body {
       )
     );
   }
-  function g8(e) {
+  function gF(e) {
     var t = e.name,
       r = e.initialValue,
       n = e.children,
@@ -24930,7 +24930,7 @@ html body {
       )
     );
   }
-  function y8(e) {
+  function yF(e) {
     var t = !1,
       r = e.length,
       n = [];
@@ -25025,8 +25025,8 @@ html body {
         e
       );
     })(),
-    E8 = ["name"],
-    b8 = Zr(function e(t) {
+    EF = ["name"],
+    bF = Zr(function e(t) {
       var r = this;
       Qr(this, e),
         H(this, "formHooked", !1),
@@ -25405,7 +25405,7 @@ html body {
             a = [];
           n.forEach(function (o) {
             var s = o.name,
-              l = qt(o, E8),
+              l = qt(o, EF),
               c = er(s);
             a.push(c),
               "value" in l && r.updateStore(Un(r.store, c, l.value)),
@@ -25645,7 +25645,7 @@ html body {
               }
             }
           });
-          var m = y8(c);
+          var m = yF(c);
           (r.lastValidatePromise = m),
             m
               .catch(function (E) {
@@ -25714,7 +25714,7 @@ html body {
         var a = function () {
             i({});
           },
-          o = new b8(a);
+          o = new bF(a);
         t.current = o.getForm();
       }
     return [t.current];
@@ -25725,7 +25725,7 @@ html body {
       registerForm: function () {},
       unregisterForm: function () {},
     }),
-    C8 = function (t) {
+    CF = function (t) {
       var r = t.validateMessages,
         n = t.onFormChange,
         i = t.onFormFinish,
@@ -25762,7 +25762,7 @@ html body {
         a
       );
     },
-    _8 = [
+    _F = [
       "name",
       "initialValues",
       "fields",
@@ -25777,7 +25777,7 @@ html body {
       "onFinish",
       "onFinishFailed",
     ],
-    P8 = function (t, r) {
+    PF = function (t, r) {
       var n = t.name,
         i = t.initialValues,
         a = t.fields,
@@ -25793,7 +25793,7 @@ html body {
         m = t.onFieldsChange,
         b = t.onFinish,
         g = t.onFinishFailed,
-        E = qt(t, _8),
+        E = qt(t, _F),
         v = y.useContext(_v),
         _ = tS(o),
         P = q(_, 1),
@@ -25857,7 +25857,7 @@ html body {
       var N = y.useRef();
       y.useEffect(
         function () {
-          h8(N.current || [], a || []) || x.setFields(a || []), (N.current = a);
+          hF(N.current || [], a || []) || x.setFields(a || []), (N.current = a);
         },
         [a, x]
       );
@@ -25897,7 +25897,7 @@ html body {
       return Math.random();
     }
   }
-  function w8() {
+  function wF() {
     for (var e = arguments.length, t = new Array(e), r = 0; r < e; r++)
       t[r] = arguments[r];
     var n = t[0],
@@ -25949,15 +25949,15 @@ html body {
       u
     );
   }
-  var S8 = y.forwardRef(P8),
-    xc = S8;
-  xc.FormProvider = C8;
+  var SF = y.forwardRef(PF),
+    xc = SF;
+  xc.FormProvider = CF;
   xc.Field = Jw;
-  xc.List = g8;
+  xc.List = gF;
   xc.useForm = tS;
-  xc.useWatch = w8;
+  xc.useWatch = wF;
   const Fd = y.createContext({}),
-    T8 = (e) => {
+    TF = (e) => {
       let { children: t, status: r, override: n } = e;
       const i = y.useContext(Fd),
         a = y.useMemo(() => {
@@ -25970,11 +25970,11 @@ html body {
         }, [r, n, i]);
       return y.createElement(Fd.Provider, { value: a }, t);
     },
-    x8 = y.createContext(void 0);
+    xF = y.createContext(void 0);
   function DE() {}
-  const O8 = y.createContext({ add: DE, remove: DE });
-  function I8(e) {
-    const t = y.useContext(O8),
+  const OF = y.createContext({ add: DE, remove: DE });
+  function IF(e) {
+    const t = y.useContext(OF),
       r = y.useRef();
     return Hr((i) => {
       if (i) {
@@ -25983,7 +25983,7 @@ html body {
       } else t.remove(r.current);
     });
   }
-  const A8 = () => {
+  const AF = () => {
       const {
         cancelButtonProps: e,
         cancelTextLocale: t,
@@ -25991,8 +25991,8 @@ html body {
       } = y.useContext(Sc);
       return le.createElement(ly, Object.assign({ onClick: r }, e), t);
     },
-    ME = A8,
-    N8 = () => {
+    ME = AF,
+    NF = () => {
       const {
         confirmLoading: e,
         okButtonProps: t,
@@ -26006,7 +26006,7 @@ html body {
         n
       );
     },
-    RE = N8;
+    RE = NF;
   function rS(e, t) {
     return le.createElement(
       "span",
@@ -26055,8 +26055,8 @@ html body {
         le.createElement(BP, { disabled: !1 }, m)
       );
     },
-    D8 = (e) => ({ animationDuration: e, animationFillMode: "both" }),
-    M8 = (e) => ({ animationDuration: e, animationFillMode: "both" }),
+    DF = (e) => ({ animationDuration: e, animationFillMode: "both" }),
+    MF = (e) => ({ animationDuration: e, animationFillMode: "both" }),
     Uf = function (e, t, r, n) {
       const a = (
         arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : !1
@@ -26067,10 +26067,10 @@ html body {
         [`
       ${a}${e}-enter,
       ${a}${e}-appear
-    `]: Object.assign(Object.assign({}, D8(n)), {
+    `]: Object.assign(Object.assign({}, DF(n)), {
           animationPlayState: "paused",
         }),
-        [`${a}${e}-leave`]: Object.assign(Object.assign({}, M8(n)), {
+        [`${a}${e}-leave`]: Object.assign(Object.assign({}, MF(n)), {
           animationPlayState: "paused",
         }),
         [`
@@ -26084,16 +26084,16 @@ html body {
         },
       };
     },
-    R8 = new ft("antFadeIn", { "0%": { opacity: 0 }, "100%": { opacity: 1 } }),
-    F8 = new ft("antFadeOut", { "0%": { opacity: 1 }, "100%": { opacity: 0 } }),
-    k8 = function (e) {
+    RF = new ft("antFadeIn", { "0%": { opacity: 0 }, "100%": { opacity: 1 } }),
+    FF = new ft("antFadeOut", { "0%": { opacity: 1 }, "100%": { opacity: 0 } }),
+    kF = function (e) {
       let t =
         arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1;
       const { antCls: r } = e,
         n = `${r}-fade`,
         i = t ? "&" : "";
       return [
-        Uf(n, R8, F8, e.motionDurationMid, t),
+        Uf(n, RF, FF, e.motionDurationMid, t),
         {
           [`
         ${i}${n}-enter,
@@ -26103,7 +26103,7 @@ html body {
         },
       ];
     },
-    L8 = new ft("antMoveDownIn", {
+    LF = new ft("antMoveDownIn", {
       "0%": {
         transform: "translate3d(0, 100%, 0)",
         transformOrigin: "0 0",
@@ -26115,7 +26115,7 @@ html body {
         opacity: 1,
       },
     }),
-    V8 = new ft("antMoveDownOut", {
+    VF = new ft("antMoveDownOut", {
       "0%": {
         transform: "translate3d(0, 0, 0)",
         transformOrigin: "0 0",
@@ -26127,7 +26127,7 @@ html body {
         opacity: 0,
       },
     }),
-    j8 = new ft("antMoveLeftIn", {
+    jF = new ft("antMoveLeftIn", {
       "0%": {
         transform: "translate3d(-100%, 0, 0)",
         transformOrigin: "0 0",
@@ -26139,7 +26139,7 @@ html body {
         opacity: 1,
       },
     }),
-    z8 = new ft("antMoveLeftOut", {
+    zF = new ft("antMoveLeftOut", {
       "0%": {
         transform: "translate3d(0, 0, 0)",
         transformOrigin: "0 0",
@@ -26151,7 +26151,7 @@ html body {
         opacity: 0,
       },
     }),
-    U8 = new ft("antMoveRightIn", {
+    UF = new ft("antMoveRightIn", {
       "0%": {
         transform: "translate3d(100%, 0, 0)",
         transformOrigin: "0 0",
@@ -26163,7 +26163,7 @@ html body {
         opacity: 1,
       },
     }),
-    B8 = new ft("antMoveRightOut", {
+    BF = new ft("antMoveRightOut", {
       "0%": {
         transform: "translate3d(0, 0, 0)",
         transformOrigin: "0 0",
@@ -26175,7 +26175,7 @@ html body {
         opacity: 0,
       },
     }),
-    H8 = new ft("antMoveUpIn", {
+    HF = new ft("antMoveUpIn", {
       "0%": {
         transform: "translate3d(0, -100%, 0)",
         transformOrigin: "0 0",
@@ -26187,7 +26187,7 @@ html body {
         opacity: 1,
       },
     }),
-    $8 = new ft("antMoveUpOut", {
+    $F = new ft("antMoveUpOut", {
       "0%": {
         transform: "translate3d(0, 0, 0)",
         transformOrigin: "0 0",
@@ -26199,16 +26199,16 @@ html body {
         opacity: 0,
       },
     }),
-    W8 = {
-      "move-up": { inKeyframes: H8, outKeyframes: $8 },
-      "move-down": { inKeyframes: L8, outKeyframes: V8 },
-      "move-left": { inKeyframes: j8, outKeyframes: z8 },
-      "move-right": { inKeyframes: U8, outKeyframes: B8 },
+    WF = {
+      "move-up": { inKeyframes: HF, outKeyframes: $F },
+      "move-down": { inKeyframes: LF, outKeyframes: VF },
+      "move-left": { inKeyframes: jF, outKeyframes: zF },
+      "move-right": { inKeyframes: UF, outKeyframes: BF },
     },
     FE = (e, t) => {
       const { antCls: r } = e,
         n = `${r}-${t}`,
-        { inKeyframes: i, outKeyframes: a } = W8[t];
+        { inKeyframes: i, outKeyframes: a } = WF[t];
       return [
         Uf(n, i, a, e.motionDurationMid),
         {
@@ -26256,11 +26256,11 @@ html body {
         opacity: 0,
       },
     }),
-    Y8 = new ft("antSlideLeftIn", {
+    YF = new ft("antSlideLeftIn", {
       "0%": { transform: "scaleX(0.8)", transformOrigin: "0% 0%", opacity: 0 },
       "100%": { transform: "scaleX(1)", transformOrigin: "0% 0%", opacity: 1 },
     }),
-    K8 = new ft("antSlideLeftOut", {
+    KF = new ft("antSlideLeftOut", {
       "0%": { transform: "scaleX(1)", transformOrigin: "0% 0%", opacity: 1 },
       "100%": {
         transform: "scaleX(0.8)",
@@ -26268,7 +26268,7 @@ html body {
         opacity: 0,
       },
     }),
-    G8 = new ft("antSlideRightIn", {
+    GF = new ft("antSlideRightIn", {
       "0%": {
         transform: "scaleX(0.8)",
         transformOrigin: "100% 0%",
@@ -26280,7 +26280,7 @@ html body {
         opacity: 1,
       },
     }),
-    q8 = new ft("antSlideRightOut", {
+    qF = new ft("antSlideRightOut", {
       "0%": { transform: "scaleX(1)", transformOrigin: "100% 0%", opacity: 1 },
       "100%": {
         transform: "scaleX(0.8)",
@@ -26288,16 +26288,16 @@ html body {
         opacity: 0,
       },
     }),
-    Q8 = {
+    QF = {
       "slide-up": { inKeyframes: iS, outKeyframes: aS },
       "slide-down": { inKeyframes: oS, outKeyframes: sS },
-      "slide-left": { inKeyframes: Y8, outKeyframes: K8 },
-      "slide-right": { inKeyframes: G8, outKeyframes: q8 },
+      "slide-left": { inKeyframes: YF, outKeyframes: KF },
+      "slide-right": { inKeyframes: GF, outKeyframes: qF },
     },
     kE = (e, t) => {
       const { antCls: r } = e,
         n = `${r}-${t}`,
-        { inKeyframes: i, outKeyframes: a } = Q8[t];
+        { inKeyframes: i, outKeyframes: a } = QF[t];
       return [
         Uf(n, i, a, e.motionDurationMid),
         {
@@ -26315,11 +26315,11 @@ html body {
         },
       ];
     },
-    Z8 = new ft("antZoomIn", {
+    ZF = new ft("antZoomIn", {
       "0%": { transform: "scale(0.2)", opacity: 0 },
       "100%": { transform: "scale(1)", opacity: 1 },
     }),
-    X8 = new ft("antZoomOut", {
+    XF = new ft("antZoomOut", {
       "0%": { transform: "scale(1)" },
       "100%": { transform: "scale(0.2)", opacity: 0 },
     }),
@@ -26331,11 +26331,11 @@ html body {
       "0%": { transform: "scale(1)" },
       "100%": { transform: "scale(0.8)", opacity: 0 },
     }),
-    J8 = new ft("antZoomUpIn", {
+    JF = new ft("antZoomUpIn", {
       "0%": { transform: "scale(0.8)", transformOrigin: "50% 0%", opacity: 0 },
       "100%": { transform: "scale(1)", transformOrigin: "50% 0%" },
     }),
-    eF = new ft("antZoomUpOut", {
+    e8 = new ft("antZoomUpOut", {
       "0%": { transform: "scale(1)", transformOrigin: "50% 0%" },
       "100%": {
         transform: "scale(0.8)",
@@ -26343,11 +26343,11 @@ html body {
         opacity: 0,
       },
     }),
-    tF = new ft("antZoomLeftIn", {
+    t8 = new ft("antZoomLeftIn", {
       "0%": { transform: "scale(0.8)", transformOrigin: "0% 50%", opacity: 0 },
       "100%": { transform: "scale(1)", transformOrigin: "0% 50%" },
     }),
-    rF = new ft("antZoomLeftOut", {
+    r8 = new ft("antZoomLeftOut", {
       "0%": { transform: "scale(1)", transformOrigin: "0% 50%" },
       "100%": {
         transform: "scale(0.8)",
@@ -26355,7 +26355,7 @@ html body {
         opacity: 0,
       },
     }),
-    nF = new ft("antZoomRightIn", {
+    n8 = new ft("antZoomRightIn", {
       "0%": {
         transform: "scale(0.8)",
         transformOrigin: "100% 50%",
@@ -26363,7 +26363,7 @@ html body {
       },
       "100%": { transform: "scale(1)", transformOrigin: "100% 50%" },
     }),
-    iF = new ft("antZoomRightOut", {
+    i8 = new ft("antZoomRightOut", {
       "0%": { transform: "scale(1)", transformOrigin: "100% 50%" },
       "100%": {
         transform: "scale(0.8)",
@@ -26371,7 +26371,7 @@ html body {
         opacity: 0,
       },
     }),
-    aF = new ft("antZoomDownIn", {
+    a8 = new ft("antZoomDownIn", {
       "0%": {
         transform: "scale(0.8)",
         transformOrigin: "50% 100%",
@@ -26379,7 +26379,7 @@ html body {
       },
       "100%": { transform: "scale(1)", transformOrigin: "50% 100%" },
     }),
-    oF = new ft("antZoomDownOut", {
+    o8 = new ft("antZoomDownOut", {
       "0%": { transform: "scale(1)", transformOrigin: "50% 100%" },
       "100%": {
         transform: "scale(0.8)",
@@ -26387,19 +26387,19 @@ html body {
         opacity: 0,
       },
     }),
-    sF = {
-      zoom: { inKeyframes: Z8, outKeyframes: X8 },
+    s8 = {
+      zoom: { inKeyframes: ZF, outKeyframes: XF },
       "zoom-big": { inKeyframes: LE, outKeyframes: VE },
       "zoom-big-fast": { inKeyframes: LE, outKeyframes: VE },
-      "zoom-left": { inKeyframes: tF, outKeyframes: rF },
-      "zoom-right": { inKeyframes: nF, outKeyframes: iF },
-      "zoom-up": { inKeyframes: J8, outKeyframes: eF },
-      "zoom-down": { inKeyframes: aF, outKeyframes: oF },
+      "zoom-left": { inKeyframes: t8, outKeyframes: r8 },
+      "zoom-right": { inKeyframes: n8, outKeyframes: i8 },
+      "zoom-up": { inKeyframes: JF, outKeyframes: e8 },
+      "zoom-down": { inKeyframes: a8, outKeyframes: o8 },
     },
-    lF = (e, t) => {
+    l8 = (e, t) => {
       const { antCls: r } = e,
         n = `${r}-${t}`,
-        { inKeyframes: i, outKeyframes: a } = sF[t];
+        { inKeyframes: i, outKeyframes: a } = s8[t];
       return [
         Uf(
           n,
@@ -26424,7 +26424,7 @@ html body {
   function jE(e) {
     return { position: e, inset: 0 };
   }
-  const cF = (e) => {
+  const c8 = (e) => {
       const { componentCls: t, antCls: r } = e;
       return [
         {
@@ -26454,10 +26454,10 @@ html body {
             }),
           },
         },
-        { [`${t}-root`]: k8(e) },
+        { [`${t}-root`]: kF(e) },
       ];
     },
-    uF = (e) => {
+    u8 = (e) => {
       const { componentCls: t } = e;
       return [
         {
@@ -26609,7 +26609,7 @@ html body {
         },
       ];
     },
-    dF = (e) => {
+    d8 = (e) => {
       const { componentCls: t } = e;
       return {
         [`${t}-root`]: {
@@ -26678,12 +26678,12 @@ html body {
       "Modal",
       (e) => {
         const t = lS(e);
-        return [uF(t), dF(t), cF(t), lF(t, "zoom")];
+        return [u8(t), d8(t), c8(t), l8(t, "zoom")];
       },
       cS,
       { unitless: { titleLineHeight: !0 } }
     );
-  var fF = function (e, t) {
+  var f8 = function (e, t) {
     var r = {};
     for (var n in e)
       Object.prototype.hasOwnProperty.call(e, n) &&
@@ -26697,14 +26697,14 @@ html body {
     return r;
   };
   let Pv;
-  const pF = (e) => {
+  const p8 = (e) => {
     (Pv = { x: e.pageX, y: e.pageY }),
       setTimeout(() => {
         Pv = null;
       }, 100);
   };
-  A6() && document.documentElement.addEventListener("click", pF, !0);
-  const hF = (e) => {
+  A6() && document.documentElement.addEventListener("click", p8, !0);
+  const h8 = (e) => {
       var t;
       const {
           getPopupContainer: r,
@@ -26738,7 +26738,7 @@ html body {
           classNames: x,
           styles: w,
         } = e,
-        T = fF(e, [
+        T = f8(e, [
           "prefixCls",
           "className",
           "rootClassName",
@@ -26771,14 +26771,14 @@ html body {
           y.createElement(jf, { className: `${O}-close-icon` }),
           !0
         ),
-        M = I8(`.${O}-content`),
+        M = IF(`.${O}-content`),
         [R, V] = Tw("Modal", T.zIndex);
       return D(
         y.createElement(
           MR,
           null,
           y.createElement(
-            T8,
+            TF,
             { status: !0, override: !0 },
             y.createElement(
               Pw.Provider,
@@ -26824,8 +26824,8 @@ html body {
         )
       );
     },
-    dS = hF,
-    mF = (e) => {
+    dS = h8,
+    m8 = (e) => {
       const {
           componentCls: t,
           titleFontSize: r,
@@ -26890,16 +26890,16 @@ html body {
         [`${u}-success ${u}-body > ${e.iconCls}`]: { color: e.colorSuccess },
       };
     },
-    vF = tw(
+    v8 = tw(
       ["Modal", "confirm"],
       (e) => {
         const t = lS(e);
-        return [mF(t)];
+        return [m8(t)];
       },
       cS,
       { order: -1e3 }
     );
-  var gF = function (e, t) {
+  var g8 = function (e, t) {
     var r = {};
     for (var n in e)
       Object.prototype.hasOwnProperty.call(e, n) &&
@@ -26924,7 +26924,7 @@ html body {
         footer: l,
         locale: c,
       } = e,
-      u = gF(e, [
+      u = g8(e, [
         "prefixCls",
         "icon",
         "okText",
@@ -27007,10 +27007,10 @@ html body {
             )
           )
         : l,
-      y.createElement(vF, { prefixCls: t })
+      y.createElement(v8, { prefixCls: t })
     );
   }
-  const yF = (e) => {
+  const y8 = (e) => {
       const {
           close: t,
           zIndex: r,
@@ -27075,21 +27075,21 @@ html body {
         y.createElement(fS, Object.assign({}, e, { confirmPrefixCls: _ }))
       );
     },
-    EF = (e) => {
+    E8 = (e) => {
       const { rootPrefixCls: t, iconPrefixCls: r, direction: n, theme: i } = e;
       return y.createElement(
         ry,
         { prefixCls: t, iconPrefixCls: r, direction: n, theme: i },
-        y.createElement(yF, Object.assign({}, e))
+        y.createElement(y8, Object.assign({}, e))
       );
     },
-    pS = EF,
+    pS = E8,
     Xa = [];
   let hS = "";
   function mS() {
     return hS;
   }
-  const bF = (e) => {
+  const b8 = (e) => {
     var t, r;
     const { prefixCls: n, getContainer: i, direction: a } = e,
       o = RP(),
@@ -27140,7 +27140,7 @@ html body {
           const u = t.getPrefixCls(void 0, mS()),
             d = t.getIconPrefixCls(),
             f = t.getTheme(),
-            p = le.createElement(bF, Object.assign({}, c));
+            p = le.createElement(b8, Object.assign({}, c));
           xw(
             le.createElement(
               ry,
@@ -27186,11 +27186,11 @@ html body {
   function bS(e) {
     return Object.assign(Object.assign({}, e), { type: "confirm" });
   }
-  function CF(e) {
+  function C8(e) {
     let { rootPrefixCls: t } = e;
     hS = t;
   }
-  var _F = function (e, t) {
+  var _8 = function (e, t) {
     var r = {};
     for (var n in e)
       Object.prototype.hasOwnProperty.call(e, n) &&
@@ -27203,10 +27203,10 @@ html body {
           (r[n[i]] = e[n[i]]);
     return r;
   };
-  const PF = (e, t) => {
+  const P8 = (e, t) => {
       var r,
         { afterClose: n, config: i } = e,
-        a = _F(e, ["afterClose", "config"]);
+        a = _8(e, ["afterClose", "config"]);
       const [o, s] = y.useState(!0),
         [l, c] = y.useState(i),
         { direction: u, getPrefixCls: d } = y.useContext(Er),
@@ -27259,9 +27259,9 @@ html body {
         )
       );
     },
-    wF = y.forwardRef(PF);
+    w8 = y.forwardRef(P8);
   let zE = 0;
-  const SF = y.memo(
+  const S8 = y.memo(
     y.forwardRef((e, t) => {
       const [r, n] = mR();
       return (
@@ -27270,7 +27270,7 @@ html body {
       );
     })
   );
-  function TF() {
+  function T8() {
     const e = y.useRef(null),
       [t, r] = y.useState([]);
     y.useEffect(() => {
@@ -27292,7 +27292,7 @@ html body {
           });
           let f = !1,
             p;
-          const h = y.createElement(wF, {
+          const h = y.createElement(w8, {
             key: `modal-${zE}`,
             config: a(s),
             ref: c,
@@ -27342,7 +27342,7 @@ html body {
         }),
         []
       ),
-      y.createElement(SF, { key: "modal-holder", ref: e }),
+      y.createElement(S8, { key: "modal-holder", ref: e }),
     ];
   }
   function CS(e) {
@@ -27353,7 +27353,7 @@ html body {
         y.createElement(e, Object.assign({}, t))
       );
   }
-  const xF = (e, t, r, n) =>
+  const x8 = (e, t, r, n) =>
       CS((a) => {
         const { prefixCls: o, style: s } = a,
           l = y.useRef(null),
@@ -27443,7 +27443,7 @@ html body {
             )
       );
     },
-    OF = function (t, r, n, i, a) {
+    O8 = function (t, r, n, i, a) {
       var o =
           arguments.length > 5 && arguments[5] !== void 0 ? arguments[5] : !1,
         s = arguments.length > 6 ? arguments[6] : void 0,
@@ -27480,10 +27480,10 @@ html body {
       };
     },
     PS = y.createContext(null);
-  function IF() {
+  function I8() {
     return y.useContext(PS);
   }
-  function AF() {
+  function A8() {
     var e = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : 10,
       t = y.useState(!1),
       r = q(t, 2),
@@ -27528,7 +27528,7 @@ html body {
       n,
     ];
   }
-  function NF(e, t, r, n) {
+  function N8(e, t, r, n) {
     var i = y.useRef(null);
     (i.current = { open: t, triggerOpen: r, customizedTrigger: n }),
       y.useEffect(function () {
@@ -27558,7 +27558,7 @@ html body {
         );
       }, []);
   }
-  var DF = [
+  var D8 = [
       "prefixCls",
       "invalidate",
       "item",
@@ -27575,7 +27575,7 @@ html body {
       "component",
     ],
     Ro = void 0;
-  function MF(e, t) {
+  function M8(e, t) {
     var r = e.prefixCls,
       n = e.invalidate,
       i = e.item,
@@ -27591,7 +27591,7 @@ html body {
       h = e.order,
       m = e.component,
       b = m === void 0 ? "div" : m,
-      g = qt(e, DF),
+      g = qt(e, D8),
       E = o && !p;
     function v(T) {
       l(c, T);
@@ -27637,9 +27637,9 @@ html body {
       w
     );
   }
-  var Sl = y.forwardRef(MF);
+  var Sl = y.forwardRef(M8);
   Sl.displayName = "Item";
-  function RF(e) {
+  function R8(e) {
     if (typeof MessageChannel > "u") or(e);
     else {
       var t = new MessageChannel();
@@ -27649,12 +27649,12 @@ html body {
         t.port2.postMessage(void 0);
     }
   }
-  function FF() {
+  function F8() {
     var e = y.useRef(null),
       t = function (n) {
         e.current ||
           ((e.current = []),
-          RF(function () {
+          R8(function () {
             Ia.unstable_batchedUpdates(function () {
               e.current.forEach(function (i) {
                 i();
@@ -27679,30 +27679,30 @@ html body {
     return [i, o];
   }
   var kd = le.createContext(null),
-    kF = ["component"],
-    LF = ["className"],
-    VF = ["className"],
-    jF = function (t, r) {
+    k8 = ["component"],
+    L8 = ["className"],
+    V8 = ["className"],
+    j8 = function (t, r) {
       var n = y.useContext(kd);
       if (!n) {
         var i = t.component,
           a = i === void 0 ? "div" : i,
-          o = qt(t, kF);
+          o = qt(t, k8);
         return y.createElement(a, je({}, o, { ref: r }));
       }
       var s = n.className,
-        l = qt(n, LF),
+        l = qt(n, L8),
         c = t.className,
-        u = qt(t, VF);
+        u = qt(t, V8);
       return y.createElement(
         kd.Provider,
         { value: null },
         y.createElement(Sl, je({ ref: r, className: Se(s, c) }, l, u))
       );
     },
-    SS = y.forwardRef(jF);
+    SS = y.forwardRef(j8);
   SS.displayName = "RawItem";
-  var zF = [
+  var z8 = [
       "prefixCls",
       "data",
       "renderItem",
@@ -27722,10 +27722,10 @@ html body {
     ],
     TS = "responsive",
     xS = "invalidate";
-  function UF(e) {
+  function U8(e) {
     return "+ ".concat(e.length, " ...");
   }
-  function BF(e, t) {
+  function B8(e, t) {
     var r = e.prefixCls,
       n = r === void 0 ? "rc-overflow" : r,
       i = e.data,
@@ -27746,9 +27746,9 @@ html body {
       v = E === void 0 ? "div" : E,
       _ = e.itemComponent,
       P = e.onVisibleChange,
-      x = qt(e, zF),
+      x = qt(e, z8),
       w = d === "full",
-      T = FF(),
+      T = F8(),
       O = Js(T, null),
       C = q(O, 2),
       A = C[0],
@@ -27941,7 +27941,7 @@ html body {
       b &&
         (Ht = y.createElement(kd.Provider, { value: W(W({}, sr), Ye) }, b(tt)));
     else {
-      var Ee = m || UF;
+      var Ee = m || U8;
       Ht = y.createElement(
         Sl,
         je({}, sr, Ye),
@@ -27972,12 +27972,12 @@ html body {
       St && (Be = y.createElement(Co, { onResize: Zt, disabled: !Re }, Be)), Be
     );
   }
-  var Ic = y.forwardRef(BF);
+  var Ic = y.forwardRef(B8);
   Ic.displayName = "Overflow";
   Ic.Item = SS;
   Ic.RESPONSIVE = TS;
   Ic.INVALIDATE = xS;
-  var HF = function (t, r) {
+  var H8 = function (t, r) {
       var n,
         i = t.prefixCls,
         a = t.id,
@@ -28071,17 +28071,17 @@ html body {
         w
       );
     },
-    OS = y.forwardRef(HF);
+    OS = y.forwardRef(H8);
   function IS(e) {
     return Array.isArray(e) ? e : e !== void 0 ? [e] : [];
   }
-  var $F =
+  var $8 =
       typeof window < "u" && window.document && window.document.documentElement,
-    WF = $F;
-  function YF(e) {
+    W8 = $8;
+  function Y8(e) {
     return e != null;
   }
-  function KF(e) {
+  function K8(e) {
     return !e && e !== 0;
   }
   function UE(e) {
@@ -28097,17 +28097,17 @@ html body {
       t
     );
   }
-  function GF(e, t) {
-    WF ? y.useLayoutEffect(e, t) : y.useEffect(e, t);
+  function G8(e, t) {
+    W8 ? y.useLayoutEffect(e, t) : y.useEffect(e, t);
   }
-  function qF(e) {
+  function q8(e) {
     var t;
     return (t = e.key) !== null && t !== void 0 ? t : e.value;
   }
   var BE = function (t) {
       t.preventDefault(), t.stopPropagation();
     },
-    QF = function (t) {
+    Q8 = function (t) {
       var r = t.id,
         n = t.prefixCls,
         i = t.values,
@@ -28154,7 +28154,7 @@ html body {
         Y = "".concat(n, "-selection"),
         z = a || (d === "multiple" && s === !1) || d === "tags" ? o : "",
         $ = d === "tags" || (d === "multiple" && s === !1) || (f && (a || U));
-      GF(
+      G8(
         function () {
           M(j.current.scrollWidth);
         },
@@ -28272,7 +28272,7 @@ html body {
           renderItem: ue,
           renderRest: Z,
           suffix: G,
-          itemKey: qF,
+          itemKey: q8,
           maxCount: E,
         });
       return y.createElement(
@@ -28288,7 +28288,7 @@ html body {
           )
       );
     },
-    ZF = function (t) {
+    Z8 = function (t) {
       var r = t.inputElement,
         n = t.prefixCls,
         i = t.id,
@@ -28390,7 +28390,7 @@ html body {
         R
       );
     };
-  function XF(e) {
+  function X8(e) {
     return ![
       ie.ESC,
       ie.SHIFT,
@@ -28419,7 +28419,7 @@ html body {
       ie.F12,
     ].includes(e);
   }
-  var JF = function (t, r) {
+  var J8 = function (t, r) {
       var n = y.useRef(null),
         i = y.useRef(!1),
         a = t.prefixCls,
@@ -28456,7 +28456,7 @@ html body {
               !i.current &&
               !o &&
               (f == null || f(I.target.value)),
-            XF(N) && p(!0);
+            X8(N) && p(!0);
         },
         P = function () {
           v(!0);
@@ -28518,8 +28518,8 @@ html body {
         },
         j =
           s === "multiple" || s === "tags"
-            ? y.createElement(QF, je({}, t, L))
-            : y.createElement(ZF, je({}, t, L));
+            ? y.createElement(Q8, je({}, t, L))
+            : y.createElement(Z8, je({}, t, L));
       return y.createElement(
         "div",
         {
@@ -28531,7 +28531,7 @@ html body {
         j
       );
     },
-    ek = y.forwardRef(JF);
+    ek = y.forwardRef(J8);
   function tk(e) {
     var t = e.prefixCls,
       r = e.align,
@@ -30173,7 +30173,7 @@ html body {
         ke = y.useRef(null),
         tt = y.useRef(null),
         $e = y.useRef(!1),
-        nr = AF(),
+        nr = A8(),
         ht = q(nr, 3),
         Zt = ht[0],
         mt = ht[1],
@@ -30414,7 +30414,7 @@ html body {
         (ni = function (Ve) {
           ce(Ve);
         }),
-        NF(
+        N8(
           function () {
             var We;
             return [
@@ -30470,7 +30470,7 @@ html body {
             f([], { type: "clear", values: d }),
             yt("", !1, !1);
         },
-        bi = OF(a, Ei, d, I, M, E, qe, g),
+        bi = O8(a, Ei, d, I, M, E, qe, g),
         Ji = bi.allowClear,
         Rn = bi.clearIcon,
         Oo = y.createElement(R, { ref: tt }),
@@ -31666,7 +31666,7 @@ html body {
     return typeof e == "string" || typeof e == "number";
   }
   var Hk = function (t, r) {
-      var n = IF(),
+      var n = I8(),
         i = n.prefixCls,
         a = n.id,
         o = n.open,
@@ -32344,7 +32344,7 @@ html body {
               Ce = B && ge === null ? [] : ge,
               ce = de(Ce);
             return n === "combobox" &&
-              KF((me = ce[0]) === null || me === void 0 ? void 0 : me.value)
+              K8((me = ce[0]) === null || me === void 0 ? void 0 : me.value)
               ? []
               : ce;
           },
@@ -32393,7 +32393,7 @@ html body {
           if (n === "combobox") {
             var me,
               Ce = (me = we[0]) === null || me === void 0 ? void 0 : me.value;
-            Z(YF(Ce) ? String(Ce) : "");
+            Z(Y8(Ce) ? String(Ce) : "");
           }
         },
         [we]
@@ -32925,7 +32925,7 @@ html body {
     vL = function (e) {
       let t =
         arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : void 0;
-      const r = y.useContext(x8);
+      const r = y.useContext(xF);
       let n;
       typeof e < "u"
         ? (n = e)
@@ -34030,7 +34030,7 @@ html body {
       );
     },
     Fs = y.forwardRef(QL),
-    ZL = xF(Fs);
+    ZL = x8(Fs);
   Fs.SECRET_COMBOBOX_MODE_DO_NOT_USE = zS;
   Fs.Option = py;
   Fs.OptGroup = fy;
@@ -34615,7 +34615,7 @@ html body {
     return Oc(vS(e));
   }
   const ti = dS;
-  ti.useModal = TF;
+  ti.useModal = T8;
   ti.info = function (t) {
     return Oc(gS(t));
   };
@@ -34636,7 +34636,7 @@ html body {
       t && t();
     }
   };
-  ti.config = CF;
+  ti.config = C8;
   ti._InternalPanelDoNotUseOrYouWillBeFired = f7;
   const p7 = ti;
   function h7() {
@@ -35887,7 +35887,7 @@ object-assign
         m = async () => {
           try {
             const { data: P } = await De.get(
-              "https://average-glasses-foal.cyclic.app/api/v1/category/get-category"
+              "https://average-glasses-foal.cyclic.app//api/v1/category/get-category"
             );
             P != null && P.success && o(P == null ? void 0 : P.category);
           } catch (P) {
@@ -35897,7 +35897,7 @@ object-assign
         b = async () => {
           try {
             const { data: P } = await De.get(
-              "https://average-glasses-foal.cyclic.app/api/v1/product/product-count"
+              "https://average-glasses-foal.cyclic.app//api/v1/product/product-count"
             );
             u(P == null ? void 0 : P.total);
           } catch (P) {
@@ -35914,7 +35914,7 @@ object-assign
           try {
             h(!0);
             const { data: P } = await De.get(
-              `https://average-glasses-foal.cyclic.app/api/v1/product/product-list/${d}`
+              `https://average-glasses-foal.cyclic.app//api/v1/product/product-list/${d}`
             );
             h(!1), i([...n, ...(P == null ? void 0 : P.products)]);
           } catch (P) {
@@ -35932,7 +35932,7 @@ object-assign
         try {
           h(!0);
           const { data: P } = await De.get(
-            `https://average-glasses-foal.cyclic.app/api/v1/product/product-list/${d}`
+            `https://average-glasses-foal.cyclic.app//api/v1/product/product-list/${d}`
           );
           console.log("data", P), h(!1), i(P.products);
         } catch (P) {
@@ -35948,7 +35948,7 @@ object-assign
       const _ = async () => {
         try {
           const { data: P } = await De.post(
-            "https://average-glasses-foal.cyclic.app/api/v1/product/product-filter",
+            "https://average-glasses-foal.cyclic.app//api/v1/product/product-filter",
             { checked: s }
           );
           i(P == null ? void 0 : P.products);
@@ -36029,7 +36029,7 @@ object-assign
                                 className: "card m-2",
                                 children: [
                                   S.jsx("img", {
-                                    src: `https://average-glasses-foal.cyclic.app/api/v1/product/product-photo/${P._id}`,
+                                    src: `https://average-glasses-foal.cyclic.app//api/v1/product/product-photo/${P._id}`,
                                     className: "card-img-top",
                                     alt: P.name,
                                   }),
@@ -36244,11 +36244,8 @@ object-assign
           c.preventDefault();
           try {
             const u = await De.post(
-              "https://average-glasses-foal.cyclic.app/api/v1/auth/login",
-              {
-                email: r,
-                password: e,
-              }
+              "https://average-glasses-foal.cyclic.app//api/v1/auth/login",
+              { email: r, password: e }
             );
             u.data.success
               ? (lt.success(u.data.message),
@@ -36622,7 +36619,7 @@ object-assign
         f.preventDefault();
         try {
           const p = await De.post(
-            "https://average-glasses-foal.cyclic.app/api/v1/auth/register",
+            "https://average-glasses-foal.cyclic.app//api/v1/auth/register",
             { name: e, email: i, password: r, phone: l, address: o }
           );
           console.log("res", p),
@@ -36760,7 +36757,7 @@ object-assign
         const i = async () => {
           (
             await De.get(
-              "https://average-glasses-foal.cyclic.app/api/v1/auth/user-auth"
+              "https://average-glasses-foal.cyclic.app//api/v1/auth/user-auth"
             )
           ).data.ok
             ? t(!0)
@@ -36871,7 +36868,7 @@ object-assign
         const i = async () => {
           (
             await De.get(
-              "https://average-glasses-foal.cyclic.app/api/v1/auth/admin-auth"
+              "https://average-glasses-foal.cyclic.app//api/v1/auth/admin-auth"
             )
           ).data.ok
             ? t(!0)
@@ -36915,7 +36912,7 @@ object-assign
           h.preventDefault();
           try {
             const { data: m } = await De.post(
-              "https://average-glasses-foal.cyclic.app/api/v1/category/create-category",
+              "https://average-glasses-foal.cyclic.app//api/v1/category/create-category",
               { name: r }
             );
             m != null && m.success
@@ -36928,7 +36925,7 @@ object-assign
         d = async () => {
           try {
             const { data: h } = await De.get(
-              "https://average-glasses-foal.cyclic.app/api/v1/category/get-category"
+              "https://average-glasses-foal.cyclic.app//api/v1/category/get-category"
             );
             h != null && h.success && t(h == null ? void 0 : h.category);
           } catch (h) {
@@ -36942,7 +36939,7 @@ object-assign
           h.preventDefault();
           try {
             const { data: m } = await De.put(
-              `https://average-glasses-foal.cyclic.app/api/v1/category/update-category/${o._id}`,
+              `https://average-glasses-foal.cyclic.app//api/v1/category/update-category/${o._id}`,
               { name: l }
             );
             m.success
@@ -36955,7 +36952,7 @@ object-assign
         p = async (h) => {
           try {
             const { data: m } = await De.delete(
-              `https://average-glasses-foal.cyclic.app/api/v1/category/Delete-category/${h}`
+              `https://average-glasses-foal.cyclic.app//api/v1/category/Delete-category/${h}`
             );
             m.success
               ? (lt.success("Category is Deleted"), d())
@@ -37069,7 +37066,7 @@ object-assign
         g = async () => {
           try {
             const { data: v } = await De.get(
-              "https://average-glasses-foal.cyclic.app/api/v1/category/get-category"
+              "https://average-glasses-foal.cyclic.app//api/v1/category/get-category"
             );
             v != null && v.success && r(v == null ? void 0 : v.category);
           } catch (v) {
@@ -37089,18 +37086,15 @@ object-assign
             _.append("price", s),
             _.append("quantity", d),
             _.append("photo", m),
-            _.append("category", c),
-            _.append("price", s),
-            console.log("photo", m);
+            _.append("category", c);
           const { data: P } = De.post(
-            "https://average-glasses-foal.cyclic.app/api/v1/product/create-product",
+            "https://average-glasses-foal.cyclic.app//api/v1/product/create-product",
             _
           );
-          console.log("data", P),
-            P != null && P.success
-              ? lt.error(P == null ? void 0 : P.message)
-              : (lt.success("Product Created Successfully"),
-                e("/dashboard/admin/products"));
+          P != null && P.success
+            ? lt.error(P == null ? void 0 : P.message)
+            : (lt.success("Product Created Successfully"),
+              e("/dashboard/admin/products"));
         } catch (_) {
           console.log(_), lt.error("something went wrong");
         }
@@ -37148,6 +37142,7 @@ object-assign
                             m ? m.name : "Upload Photo",
                             S.jsx("input", {
                               type: "file",
+                              name: "photo",
                               accept: "image/*",
                               onChange: (v) => b(v.target.files[0]),
                               hidden: !0,
@@ -40830,7 +40825,7 @@ Arguments: ` +
         i = async () => {
           try {
             const { data: a } = await De.get(
-              "https://average-glasses-foal.cyclic.app/api/v1/auth/orders-get"
+              "https://average-glasses-foal.cyclic.app//api/v1/auth/orders-get"
             );
             t(a);
           } catch (a) {
@@ -40955,7 +40950,7 @@ Arguments: ` +
                                               S.jsx("div", {
                                                 className: "col-md-4",
                                                 children: S.jsx("img", {
-                                                  src: `https://average-glasses-foal.cyclic.app/api/v1/product/product-photo/${u._id}`,
+                                                  src: `https://average-glasses-foal.cyclic.app//api/v1/product/product-photo/${u._id}`,
                                                   className: "card-img-top",
                                                   alt: u.name,
                                                   width: "50px",
@@ -41015,7 +41010,7 @@ Arguments: ` +
         p.preventDefault();
         try {
           const { data: h } = await De.put(
-            "https://average-glasses-foal.cyclic.app/api/v1/auth/profile",
+            "https://average-glasses-foal.cyclic.app//api/v1/auth/profile",
             { name: r, email: o, password: i, phone: u, address: l }
           );
           if (h != null && h.error) lt.error(h == null ? void 0 : h.error);
@@ -41129,7 +41124,7 @@ Arguments: ` +
         r = async () => {
           try {
             const { data: n } = await De.get(
-              "https://average-glasses-foal.cyclic.app/api/v1/product/get-product"
+              "https://average-glasses-foal.cyclic.app//api/v1/product/get-product"
             );
             console.log("data", n), t(n.products);
           } catch (n) {
@@ -41168,7 +41163,7 @@ Arguments: ` +
                                   style: { width: "18rem" },
                                   children: [
                                     S.jsx("img", {
-                                      src: `https://average-glasses-foal.cyclic.app/api/v1/product/product-photo/${n._id}`,
+                                      src: `https://average-glasses-foal.cyclic.app//api/v1/product/product-photo/${n._id}`,
                                       className: "card-img-top",
                                       alt: n.name,
                                     }),
@@ -41215,7 +41210,7 @@ Arguments: ` +
         _ = async () => {
           try {
             const { data: T } = await De.get(
-              `https://average-glasses-foal.cyclic.app/api/v1/product/get-Single-product/${t.slug}`
+              `https://average-glasses-foal.cyclic.app//api/v1/product/get-Single-product/${t.slug}`
             );
             a(T.product.name),
               v(T.product._id),
@@ -41235,7 +41230,7 @@ Arguments: ` +
       const P = async () => {
         try {
           const { data: T } = await De.get(
-            "https://average-glasses-foal.cyclic.app/api/v1/category/get-category"
+            "https://average-glasses-foal.cyclic.app//api/v1/category/get-category"
           );
           T != null && T.success && n(T == null ? void 0 : T.category);
         } catch (T) {
@@ -41256,7 +41251,7 @@ Arguments: ` +
               b && O.append("photo", b),
               O.append("category", u);
             const { data: C } = De.put(
-              `https://average-glasses-foal.cyclic.app/api/v1/product/update-product/${E}`,
+              `https://average-glasses-foal.cyclic.app//api/v1/product/update-product/${E}`,
               O
             );
             C != null && C.success
@@ -41272,7 +41267,7 @@ Arguments: ` +
             if (!window.prompt("Are You Sure want to delete this product ? "))
               return;
             const { data: O } = await De.delete(
-              `https://average-glasses-foal.cyclic.app/api/v1/product/delete-product/${E}`
+              `https://average-glasses-foal.cyclic.app//api/v1/product/delete-product/${E}`
             );
             lt.success("Product DEleted Succfully"),
               e("/dashboard/admin/products");
@@ -41347,7 +41342,7 @@ Arguments: ` +
                           : S.jsx("div", {
                               className: "text-center",
                               children: S.jsx("img", {
-                                src: `https://average-glasses-foal.cyclic.app/api/v1/product/product-photo/${E}`,
+                                src: `https://average-glasses-foal.cyclic.app//api/v1/product/product-photo/${E}`,
                                 alt: "product_photo",
                                 height: "200px",
                                 className: "img img-responsive",
@@ -41464,7 +41459,7 @@ Arguments: ` +
                           style: { width: "18rem" },
                           children: [
                             S.jsx("img", {
-                              src: `https://average-glasses-foal.cyclic.app/api/v1/product/product-photo/${r._id}`,
+                              src: `https://average-glasses-foal.cyclic.app//api/v1/product/product-photo/${r._id}`,
                               className: "card-img-top",
                               alt: r.name,
                             }),
@@ -41516,7 +41511,7 @@ Arguments: ` +
       const a = async () => {
         try {
           const { data: l } = await De.get(
-            `https://average-glasses-foal.cyclic.app/api/v1/product/get-Single-product/${e.slug}`
+            `https://average-glasses-foal.cyclic.app//api/v1/product/get-Single-product/${e.slug}`
           );
           r(l == null ? void 0 : l.product);
         } catch (l) {
@@ -41531,7 +41526,7 @@ Arguments: ` +
               S.jsx("div", {
                 className: "col-md-6",
                 children: S.jsx("img", {
-                  src: `https://average-glasses-foal.cyclic.app/api/v1/product/product-photo/${t._id}`,
+                  src: `https://average-glasses-foal.cyclic.app//api/v1/product/product-photo/${t._id}`,
                   className: "card-img-top",
                   alt: t.name,
                   height: "300",
@@ -41597,7 +41592,7 @@ Arguments: ` +
                             className: "card m-2",
                             children: [
                               S.jsx("img", {
-                                src: `https://average-glasses-foal.cyclic.app/api/v1/product/product-photo/${l._id}`,
+                                src: `https://average-glasses-foal.cyclic.app//api/v1/product/product-photo/${l._id}`,
                                 className: "card-img-top",
                                 alt: l.name,
                               }),
@@ -41690,7 +41685,7 @@ Arguments: ` +
       const o = async () => {
         try {
           const { data: s } = await De.get(
-            `https://average-glasses-foal.cyclic.app/api/v1/product/product-category/${t.slug}`
+            `https://average-glasses-foal.cyclic.app//api/v1/product/product-category/${t.slug}`
           );
           n(s == null ? void 0 : s.products),
             a(s == null ? void 0 : s.category);
@@ -41726,7 +41721,7 @@ Arguments: ` +
                               className: "card m-2",
                               children: [
                                 S.jsx("img", {
-                                  src: `https://average-glasses-foal.cyclic.app/api/v1/product/product-photo/${s._id}`,
+                                  src: `https://average-glasses-foal.cyclic.app//api/v1/product/product-photo/${s._id}`,
                                   className: "card-img-top",
                                   alt: s.name,
                                 }),
@@ -63412,7 +63407,7 @@ The  braintree-hidden class should be removed here once we get icons for these c
         p = async () => {
           try {
             const { data: v } = await De.get(
-              "https://average-glasses-foal.cyclic.app/api/v1/product/braintree/token"
+              "https://average-glasses-foal.cyclic.app//api/v1/product/braintree/token"
             );
             t(v == null ? void 0 : v.clientToken);
           } catch (v) {
@@ -63427,7 +63422,7 @@ The  braintree-hidden class should be removed here once we get icons for these c
           u(!0);
           const { nonce: v } = await s.requestPaymentMethod(),
             { data: _ } = await De.post(
-              "https://average-glasses-foal.cyclic.app/api/v1/product/braintree/payment",
+              "https://average-glasses-foal.cyclic.app//api/v1/product/braintree/payment",
               { nonce: v, cart: n }
             );
           u(!1),
@@ -63492,7 +63487,7 @@ The  braintree-hidden class should be removed here once we get icons for these c
                                   S.jsx("div", {
                                     className: "col-md-4",
                                     children: S.jsx("img", {
-                                      src: `https://average-glasses-foal.cyclic.app/api/v1/product/product-photo/${v._id}`,
+                                      src: `https://average-glasses-foal.cyclic.app//api/v1/product/product-photo/${v._id}`,
                                       className: "card-img-top",
                                       alt: v.name,
                                       width: "100%",
@@ -63627,7 +63622,7 @@ The  braintree-hidden class should be removed here once we get icons for these c
         o = async () => {
           try {
             const { data: l } = await De.get(
-              "https://average-glasses-foal.cyclic.app/api/v1/auth/all-orders"
+              "https://average-glasses-foal.cyclic.app//api/v1/auth/all-orders"
             );
             n(l);
           } catch (l) {
@@ -63639,7 +63634,7 @@ The  braintree-hidden class should be removed here once we get icons for these c
       }, [i == null ? void 0 : i.token]);
       const s = async (l, c) => {
         await De.put(
-          `https://average-glasses-foal.cyclic.app/api/v1/auth/order-status/${l}`,
+          `https://average-glasses-foal.cyclic.app//api/v1/auth/order-status/${l}`,
           {
             status: c,
           }
@@ -63761,7 +63756,7 @@ The  braintree-hidden class should be removed here once we get icons for these c
                                           S.jsx("div", {
                                             className: "col-md-4",
                                             children: S.jsx("img", {
-                                              src: `https://average-glasses-foal.cyclic.app/api/v1/product/product-photo/${p._id}`,
+                                              src: `https://average-glasses-foal.cyclic.app//api/v1/product/product-photo/${p._id}`,
                                               className: "card-img-top",
                                               alt: p.name,
                                               width: "50px",

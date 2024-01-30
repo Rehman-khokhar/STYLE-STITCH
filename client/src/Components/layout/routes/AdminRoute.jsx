@@ -10,7 +10,7 @@ export default function AdminRoute() {
   useEffect(() => {
     const authCheck = async () => {
       const res = await axios.get(
-        `https://angry-lime-dolphin.cyclic.app/api/v1/auth/admin-auth`
+        `https://average-glasses-foal.cyclic.app/api/v1/auth/admin-auth`
       );
       if (res.data.ok) {
         setOk(true);

@@ -25,7 +25,7 @@ const UserProfile = () => {
 
     try {
       const { data } = await axios.put(
-        `https://angry-lime-dolphin.cyclic.app/api/v1/auth/profile`,
+        `https://average-glasses-foal.cyclic.app/api/v1/auth/profile`,
         {
           name,
           email,

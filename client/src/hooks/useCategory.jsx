@@ -8,7 +8,7 @@ export default function useCategory() {
   const getCategories = async () => {
     try {
       const { data } = await axios.get(
-        `https://angry-lime-dolphin.cyclic.app/api/v1/category/get-category`
+        `https://average-glasses-foal.cyclic.app/api/v1/category/get-category`
       );
       setCategories(data?.category);
     } catch (error) {

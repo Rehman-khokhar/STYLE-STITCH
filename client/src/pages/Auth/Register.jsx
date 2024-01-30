@@ -28,7 +28,7 @@ function Register() {
 
     try {
       const res = await axios.post(
-        `https://angry-lime-dolphin.cyclic.app/api/v1/auth/register`,
+        `https://average-glasses-foal.cyclic.app/api/v1/auth/register`,
         {
           name,
           email,

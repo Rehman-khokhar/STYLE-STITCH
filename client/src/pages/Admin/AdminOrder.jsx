@@ -21,7 +21,7 @@ const AdminOrder = () => {
   const getOrders = async () => {
     try {
       const { data } = await axios.get(
-        `https://angry-lime-dolphin.cyclic.app/api/v1/auth/all-orders`
+        `https://average-glasses-foal.cyclic.app/api/v1/auth/all-orders`
       );
       setOrders(data);
     } catch (error) {
@@ -35,7 +35,7 @@ const AdminOrder = () => {
 
   const handleChange = async (orderId, value) => {
     const { data } = await axios.put(
-      `https://angry-lime-dolphin.cyclic.app/api/v1/auth/order-status/${orderId}`,
+      `https://average-glasses-foal.cyclic.app/api/v1/auth/order-status/${orderId}`,
       { status: value }
     );
     getOrders();
@@ -97,7 +97,7 @@ const AdminOrder = () => {
                     <div className="row mb-2 p-3 card flex-row" key={p._id}>
                       <div className="col-md-4">
                         <img
-                          src={`https://angry-lime-dolphin.cyclic.app/api/v1/product/product-photo/${p._id}`}
+                          src={`https://average-glasses-foal.cyclic.app/api/v1/product/product-photo/${p._id}`}
                           className="card-img-top"
                           alt={p.name}
                           width="50px"

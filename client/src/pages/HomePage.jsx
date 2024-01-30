@@ -25,7 +25,7 @@ const HomePage = () => {
   const getAllCategory = async () => {
     try {
       const { data } = await axios.get(
-        `https://angry-lime-dolphin.cyclic.app/api/v1/category/get-category`
+        `https://average-glasses-foal.cyclic.app/api/v1/category/get-category`
       );
       if (data?.success) {
         setCategories(data?.category);
@@ -38,7 +38,7 @@ const HomePage = () => {
   const getTotal = async () => {
     try {
       const { data } = await axios.get(
-        `https://angry-lime-dolphin.cyclic.app/api/v1/product/product-count`
+        `https://average-glasses-foal.cyclic.app/api/v1/product/product-count`
       );
       setTotal(data?.total);
     } catch (error) {
@@ -58,7 +58,7 @@ const HomePage = () => {
     try {
       setLoading(true);
       const { data } = await axios.get(
-        `https://angry-lime-dolphin.cyclic.app/api/v1/product/product-list/${page}`
+        `https://average-glasses-foal.cyclic.app/api/v1/product/product-list/${page}`
       );
       setLoading(false);
       setProducts([...products, ...data?.products]);
@@ -87,7 +87,7 @@ const HomePage = () => {
     try {
       setLoading(true);
       const { data } = await axios.get(
-        `https://angry-lime-dolphin.cyclic.app/api/v1/product/product-list/${page}`
+        `https://average-glasses-foal.cyclic.app/api/v1/product/product-list/${page}`
       );
       console.log("data", data);
       setLoading(false);
@@ -108,7 +108,7 @@ const HomePage = () => {
   const filterProduct = async () => {
     try {
       const { data } = await axios.post(
-        `https://angry-lime-dolphin.cyclic.app/api/v1/product/product-filter`,
+        `https://average-glasses-foal.cyclic.app/api/v1/product/product-filter`,
         { checked }
       );
       setProducts(data?.products);
@@ -158,7 +158,7 @@ const HomePage = () => {
             {products?.map((p) => (
               <div className="card m-2" key={p._id}>
                 <img
-                  src={`https://angry-lime-dolphin.cyclic.app/api/v1/product/product-photo/${p._id}`}
+                  src={`https://average-glasses-foal.cyclic.app/api/v1/product/product-photo/${p._id}`}
                   className="card-img-top"
                   alt={p.name}
                 />

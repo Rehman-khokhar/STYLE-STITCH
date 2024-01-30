@@ -19,7 +19,7 @@ const Login = () => {
 
     try {
       const res = await axios.post(
-        `https://angry-lime-dolphin.cyclic.app/api/v1/auth/login`,
+        `https://average-glasses-foal.cyclic.app/api/v1/auth/login`,
         {
           email,
           password,

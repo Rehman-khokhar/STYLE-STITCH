@@ -16,7 +16,7 @@ const DetailPage = () => {
   const getProduct = async () => {
     try {
       const { data } = await axios.get(
-        `https://angry-lime-dolphin.cyclic.app/api/v1/product/get-Single-product/${params.slug}`
+        `https://average-glasses-foal.cyclic.app/api/v1/product/get-Single-product/${params.slug}`
       );
       setProduct(data?.product);
     } catch (error) {
@@ -29,7 +29,7 @@ const DetailPage = () => {
       <div className="row container product-details">
         <div className="col-md-6">
           <img
-            src={`https://angry-lime-dolphin.cyclic.app/api/v1/product/product-photo/${product._id}`}
+            src={`https://average-glasses-foal.cyclic.app/api/v1/product/product-photo/${product._id}`}
             className="card-img-top"
             alt={product.name}
             height="300"
@@ -62,7 +62,7 @@ const DetailPage = () => {
           {relatedProducts?.map((p) => (
             <div className="card m-2" key={p._id}>
               <img
-                src={`https://angry-lime-dolphin.cyclic.app/api/v1/product/product-photo/${p._id}`}
+                src={`https://average-glasses-foal.cyclic.app/api/v1/product/product-photo/${p._id}`}
                 className="card-img-top"
                 alt={p.name}
               />

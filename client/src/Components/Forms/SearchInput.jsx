@@ -10,7 +10,7 @@ const SearchInput = () => {
     e.preventDefault();
     try {
       const { data } = await axios.get(
-        `https://angry-lime-dolphin.cyclic.app/api/v1/product/search/${values.keyword}`
+        `https://average-glasses-foal.cyclic.app/api/v1/product/search/${values.keyword}`
       );
       setValues({ ...values, result: data });
       navigate("/search");
